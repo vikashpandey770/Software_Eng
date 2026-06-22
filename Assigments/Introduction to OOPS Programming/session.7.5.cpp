@@ -9,18 +9,15 @@ using namespace std;
 
 int main(){
 	
-	ofstream file("insta_followers.txt"){
+	ifstream file("insta_followers.txt");
 	
-	string usernames;
-	string sp;
+	int count=0;
+while(file,count){
+	count++;
+
+}			cout<<"total number of followerrs listed :"<<count<<endl;
 	
-	cout<<"enter a username:";
-	getline(cin,usernames);
 	
-	
-	}
-		
-	}
 	
 	file.close();
 	return 0;
