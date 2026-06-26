@@ -6,9 +6,6 @@ using namespace std;
 int main(){
 	ifstream save("wishlist.txt");
 	
-	if(!save){
-		cout<<"error";
-	}
 	
 	string ss;
 	

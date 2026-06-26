@@ -23,9 +23,7 @@ public:
 		cin>>isDone;	
 			
 		isDone=false;
-	
 	}
-
 
 void markDone(){
 	cout<<"your title is:"<<title<<endl;
@@ -35,18 +33,13 @@ void markDone(){
 	
 }
 void display(){
-	
-	cout<<"title"<<title<<" [" << (isDone ? "DONE" : "PENDING") << "]" << endl;
-	   
+	cout<<"title"<<title<<"["<<(isDone ? "DONE" : "PENDING")<<"]"<< endl;	   
 }
-		
 };
-
 int main(){
 	
-	Task ts();
-	ts.markDone();
-	ts.display();
-	
+	Task t("vikash");
+	t.display();
+	t.markDone();
 	return 0;
 }

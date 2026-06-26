@@ -9,20 +9,36 @@ using namespace std;
 string  task[5];
 
 void marktaskdone(int index){
-	if(index >= 0 && index<5){
-		task[index] +="-done";
+	if(index >= 1 && index<=5){
+		task[index-1] +="-done";
 	}
 }
 int main(){
+	int index;
 	cout<<"enter a task:"<<endl;
 	for(int i=0;i<5;i++){
 		cout<<"task:"<<i+1<<":";
 		getline(cin,task[i]);
 	}	
+	
+
+
 	cout<<"print the all tasks:"<<endl;
 	for(int i=0;i<5;i++){
 	cout<<"task:"<<i+1<<":"<<task[i]<<endl;
-	
 }
+
+ cout<<"Enter task number to mark as DONE:"<<endl;
+    cin>>index;
+
+    marktaskdone(index);
+
+    cout <<"Updated Task List:"<<endl;
+    for(int i=0;i<5;i++)
+    {
+        cout<<i+1<<"."<<task[i]<<endl;
+    }
+
+   
 	return 0;
 }

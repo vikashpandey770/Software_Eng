@@ -30,5 +30,7 @@ cin.ignore();
 
 	file.close();
 	cout<<"--------successfully create---------";
+	
+	
 	return 0;
 }

@@ -1,0 +1,6 @@
+car
+100
+bike
+500
+activa
+450
