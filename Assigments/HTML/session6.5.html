@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Card</title>
+    <style>
+        /* Base Card Styling */
+        .restaurant-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            width: 300px;
+            font-family: Arial, sans-serif;
+            background-color: aquamarine;
+        }
+
+        .u-padding-md {
+            padding: 25px;
+        }
+        
+
+        .restaurant-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+
+        .cuisine-type {
+            color: #666;
+            margin: 0;
+        }
+        .restaurant-card:hover{
+            background-color: white;
+        }
+
+        .rating {
+            background-color: #257d3d;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        .rating:hover{
+            background-color: crimson;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="restaurant-card">
+        <!-- Reusable padding class applied to each section -->
+        <div class="card-header u-padding-md">
+            <h2 class="restaurant-name">The Spicy Bistro</h2>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #e0e0e0; margin: 0;">
+        <div class="card-body u-padding-md">
+            <p class="cuisine-type" style="color: red;">North Indian, Chinese</p>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #e0e0e0; margin: 0;">
+        <div class="card-footer u-padding-md">
+            <span class="rating">4.2 ★</span>
+        </div>
+    </div>
+
+</body>
+</html>

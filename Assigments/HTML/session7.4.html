@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Product Grid</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f1f3f6;
+    padding: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns */
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.card h3 {
+    margin: 12px 0 8px;
+    font-size: 18px;
+}
+
+.card p {
+    color: green;
+    font-weight: bold;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="product-grid">
+    <div class="card">
+        <img src="https://via.placeholder.com/250x180" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>₹999</p>
+    </div>
+
+    <div class="card">
+        <img src="https://via.placeholder.com/250x180" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>₹1,299</p>
+    </div>
+
+    <div class="card">
+        <img src="image\aatt1.png" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>₹799</p>
+    </div>
+
+    <div class="card">
+        <img src="image\downl.png" alt="Product 4">
+        <h3>Product 4</h3>
+        <p>₹1,499</p>
+    </div>
+
+    <div class="card">
+        <img src="image\download (1).jfif" alt="Product 5">
+        <h3>Product 5</h3>
+        <p>₹2,199</p>
+    </div>
+
+    <div class="card">
+        <img src="image\images (2).jfif" alt="Product 6">
+        <h3>Product 6</h3>
+        <p>₹599</p>
+    </div>
+</div>
+
+</body>
+</html>

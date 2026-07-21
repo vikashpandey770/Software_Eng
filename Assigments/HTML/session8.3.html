@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flipkart Style Product Card</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f1f3f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: #fff;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-details {
+            padding: 15px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            color: #212121;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            font-size: 20px;
+            color: #388e3c;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .product-rating {
+            display: inline-block;
+            background: #388e3c;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .buy-btn {
+            width: 100%;
+            padding: 10px;
+            background: #2874f0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .buy-btn:hover {
+            background: #0b5ed7;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            .product-title {
+                font-size: 16px;
+            }
+
+            .product-price {
+                font-size: 18px;
+            }
+
+            .buy-btn {
+                font-size: 15px;
+                padding: 9px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-card">
+    <img src="image\teas.jfif"  style="height: 100px; width: 100px;" alt="Product Image">
+
+    <div class="product-details">
+        <h2 class="product-title">Wireless Bluetooth Headphones</h2>
+
+        <div class="product-price">₹1,999</div>
+
+        <div class="product-rating">★ 4.5</div>
+
+        <button class="buy-btn">Add to Cart</button>
+    </div>
+</div>
+</body>
+</html>

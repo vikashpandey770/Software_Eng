@@ -1,0 +1,37 @@
+<style>
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+</style>
+
+<div class="container mt-4">
+    <div class="card-container">
+
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" class="card-img-top">
+            <div class="card-body">
+                <h5>Card 1</h5>
+                <p>Card description.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" class="card-img-top">
+            <div class="card-body">
+                <h5>Card 2</h5>
+                <p>Card description.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" class="card-img-top">
+            <div class="card-body">
+                <h5>Card 3</h5>
+                <p>Card description.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
