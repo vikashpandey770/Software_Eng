@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Links Form</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:400px;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.input-box{
+    position:relative;
+    margin-bottom:18px;
+}
+
+.input-box i{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#666;
+    font-size:18px;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px 12px 12px 45px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.input-box input:focus{
+    outline:none;
+    border-color:#007bff;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Add Social Links</h2>
+
+<form>
+
+<div class="input-box">
+    <i class="fab fa-instagram"></i>
+    <input type="url" placeholder="Instagram Profile URL">
+</div>
+
+<div class="input-box">
+    <i class="fab fa-linkedin"></i>
+    <input type="url" placeholder="LinkedIn Profile URL">
+</div>
+
+<div class="input-box">
+    <i class="fab fa-github"></i>
+    <input type="url" placeholder="GitHub Profile URL">
+</div>
+
+<div class="input-box">
+    <i class="fab fa-twitter"></i>
+    <input type="url" placeholder="Twitter (X) Profile URL">
+</div>
+
+<button type="submit">Save Links</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

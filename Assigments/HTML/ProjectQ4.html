@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Link Preview Cards</title>
+  
+  <!-- Font Awesome for Platform Icons -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin-bottom: 24px;
+    }
+
+    .input-group {
+      margin-bottom: 16px;
+    }
+
+    .input-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #444;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #4338ca;
+    }
+
+    /* Card Container */
+    #cardContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Base Preview Card */
+    .preview-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      border-left: 6px solid #ccc; /* Default fallback */
+    }
+
+    .card-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .card-info i {
+      font-size: 28px;
+    }
+
+    .handle-text {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .visit-btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: opacity 0.2s;
+    }
+
+    .visit-btn:hover {
+      opacity: 0.85;
+    }
+
+    /* ====================================================
+       Platform-Specific Styles (Distinct Colors & Borders)
+       ==================================================== */
+
+    /* Spotify */
+    .card-spotify {
+      border-left-color: #1DB954;
+      background: #f0fdf4;
+    }
+    .card-spotify i { color: #1DB954; }
+    .card-spotify .visit-btn { background-color: #1DB954; }
+
+    /* YouTube Music */
+    .card-youtube {
+      border-left-color: #FF0000;
+      background: #fff5f5;
+    }
+    .card-youtube i { color: #FF0000; }
+    .card-youtube .visit-btn { background-color: #FF0000; }
+
+    /* Apple Music */
+    .card-apple {
+      border-left-color: #FA243C;
+      background: #fff5f7;
+    }
+    .card-apple i { color: #FA243C; }
+    .card-apple .visit-btn { background-color: #FA243C; }
+  </style>
+</head>
+<body>
+
+  <h2>Submit Music Profile Links</h2>
+
+  <form id="musicLinksForm">
+    <div class="input-group">
+      <label for="spotify">Spotify Profile URL</label>
+      <input type="url" id="spotify" placeholder="https://open.spotify.com/user/username" />
+    </div>
+
+    <div class="input-group">
+      <label for="youtube">YouTube Music Channel URL</label>
+      <input type="url" id="youtube" placeholder="https://music.youtube.com/channel/UCxxxxxx" />
+    </div>
+
+    <div class="input-group">
+      <label for="apple">Apple Music Profile URL</label>
+      <input type="url" id="apple" placeholder="https://music.apple.com/profile/username" />
+    </div>
+
+    <button type="submit">Generate Preview Cards</button>
+  </form>
+
+  <!-- Container where generated cards will be appended -->
+  <div id="cardContainer"></div>
+
+  <script>
+    document.getElementById('musicLinksForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const container = document.getElementById('cardContainer');
+      container.innerHTML = ''; // Clear previous preview cards
+
+      const platforms = [
+        {
+          id: 'spotify',
+          name: 'Spotify',
+          iconClass: 'fa-brands fa-spotify',
+          cardClass: 'card-spotify'
+        },
+        {
+          id: 'youtube',
+          name: 'YouTube Music',
+          iconClass: 'fa-brands fa-youtube',
+          cardClass: 'card-youtube'
+        },
+        {
+          id: 'apple',
+          name: 'Apple Music',
+          iconClass: 'fa-brands fa-apple',
+          cardClass: 'card-apple'
+        }
+      ];
+
+      platforms.forEach(platform => {
+        const inputVal = document.getElementById(platform.id).value.trim();
+
+        if (inputVal) {
+          // Extract username or handle from URL
+          const handle = extractUsername(inputVal);
+
+          // Create Preview Card HTML
+          const cardHtml = `
+            <div class="preview-card ${platform.cardClass}">
+              <div class="card-info">
+                <i class="${platform.iconClass}"></i>
+                <div>
+                  <div class="handle-text">${handle}</div>
+                  <small style="color: #666;">${platform.name}</small>
+                </div>
+              </div>
+              <a href="${inputVal}" target="_blank" rel="noopener noreferrer" class="visit-btn">
+                Visit <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:12px;"></i>
+              </a>
+            </div>
+          `;
+
+          container.insertAdjacentHTML('beforeend', cardHtml);
+        }
+      });
+    });
+
+    /**
+     * Helper function to extract username/handle from a URL string
+     */
+    function extractUsername(url) {
+      try {
+        const parsedUrl = new URL(url);
+        const pathSegments = parsedUrl.pathname.split('/').filter(segment => segment.length > 0);
+
+        // Return last segment of pathname, or host fallback
+        if (pathSegments.length > 0) {
+          let handle = pathSegments[pathSegments.length - 1];
+          return handle.startsWith('@') ? handle : `@${handle}`;
+        }
+        return '@user';
+      } catch (e) {
+        return '@user';
+      }
+    }
+  </script>
+</body>
+</html>

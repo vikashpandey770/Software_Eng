@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gamer Tag Bio Link</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#111827;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    background:#1f2937;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    width:100%;
+    max-width:420px;
+    box-shadow:0 0 15px rgba(0,0,0,.5);
+}
+
+.avatar{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:4px solid #00d4ff;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+h1{
+    margin-bottom:8px;
+}
+
+p{
+    color:#cbd5e1;
+    margin-bottom:25px;
+}
+
+.links{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.links a{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:14px;
+    border-radius:8px;
+    font-size:18px;
+    transition:.3s;
+}
+
+.links a:hover{
+    background:#1d4ed8;
+    transform:scale(1.03);
+}
+
+/* Desktop View */
+@media (min-width:768px){
+
+.container{
+    max-width:700px;
+}
+
+.links{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <img src="" class="avatar" alt="Avatar">
+
+    <h1>Shadow-Game</h1>
+
+    <p>🎮 FPS | RPG | Streamer</p>
+
+    <div class="links">
+        <a href="https://www.twitch.tv" target="_blank">🎥 Twitch</a>
+
+        <a href="https://discord.com" target="_blank">💬 Discord</a>
+
+        <a href="https://store.steampowered.com" target="_blank">🕹 Steam</a>
+    </div>
+</div>
+</body>
+</html>
